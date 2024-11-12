@@ -3,6 +3,8 @@ plugins {
     alias(libs.plugins.jetbrains.kotlin.android)
     alias(libs.plugins.dagger.hilt.android)
     alias(libs.plugins.ksp)
+    //alias(libs.plugins.kotlinParcelize)
+
 }
 
 android {
@@ -71,20 +73,20 @@ dependencies {
 
     ksp(libs.dagger.compiler)
     ksp(libs.dagger.hilt.android.compiler)
-    // Retrofit and Gson
+    /*Retrofit and Gson*/
     implementation(libs.retrofit)
     implementation(libs.retrofit.gson)
     implementation(libs.gson)
 
-    // Coroutines for Asynchronous Programming
+    /* Coroutines for Asynchronous Programming*/
     implementation(libs.coroutines.core)
     implementation(libs.coroutines.android)
 
-    // Android Testing Libraries
+     /* Android Testing Libraries*/
     testImplementation(libs.junit)
     testImplementation(libs.mockito.core)
-    implementation("io.coil-kt:coil-compose:2.1.0")
-
+    /* Coin*/
+    implementation(libs.coil.compose)
 
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
