@@ -23,14 +23,21 @@ android {
             useSupportLibrary = true
         }
     }
+    buildFeatures {
+        buildConfig = true
+    }
 
     buildTypes {
+        debug {
+            buildConfigField("String", "API_KEY", "\"538c416021af406d9d75dc4c04c93267\"")
+        }
         release {
             isMinifyEnabled = false
             proguardFiles(
                 getDefaultProguardFile("proguard-android-optimize.txt"),
                 "proguard-rules.pro"
             )
+            buildConfigField("String", "API_KEY", "\"538c416021af406d9d75dc4c04c93267\"")
         }
     }
     compileOptions {
@@ -64,6 +71,10 @@ dependencies {
     implementation(libs.androidx.ui.tooling.preview)
     implementation(libs.androidx.material3)
     implementation(libs.androidx.navigation.compose)
+    implementation(libs.mockk)
+    implementation(libs.turbine)
+    implementation(libs.coroutines.test)
+    implementation(libs.kotest.assertions)
 
 
     // Hilt Dependency Injection

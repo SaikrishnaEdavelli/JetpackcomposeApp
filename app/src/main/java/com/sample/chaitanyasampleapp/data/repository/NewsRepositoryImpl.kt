@@ -1,5 +1,6 @@
 package com.sample.chaitanyasampleapp.data.repository
 
+import com.sample.chaitanyasampleapp.BuildConfig
 import com.sample.chaitanyasampleapp.data.api.NewsApiService
 import com.sample.chaitanyasampleapp.data.model.Article
 import kotlinx.coroutines.flow.Flow
@@ -11,7 +12,7 @@ class NewsRepositoryImpl @Inject constructor(
     private val apiService: NewsApiService
 ) : NewsRepository {
     override fun getTopHeadlines(country: String): Flow<Result<List<Article>>> = flow {
-        val response = apiService.getTopHeadlines(country, apiKey = "538c416021af406d9d75dc4c04c93267")
+        val response = apiService.getTopHeadlines(country, apiKey = BuildConfig.API_KEY)
         if (response.status == "ok") {
             emit(Result.success(response.articles))
         } else {

@@ -20,6 +20,9 @@ import kotlinx.coroutines.flow.shareIn
 import kotlinx.coroutines.launch
 import javax.inject.Inject
 
+
+private const val DEFAULT_COUNTRY = "us"
+
 @HiltViewModel
 class NewsViewModel @Inject constructor(
     private val getTopHeadlinesUseCase: GetTopHeadlinesUseCase
@@ -54,7 +57,7 @@ class NewsViewModel @Inject constructor(
         fetchTopHeadlines()
     }
 
-    fun fetchTopHeadlines(country: String = "us") {
+    fun fetchTopHeadlines(country: String = DEFAULT_COUNTRY) {
         _state.value = _state.value.copy(isLoading = true)
         getTopHeadlinesUseCase(country)
             .onEach { result ->

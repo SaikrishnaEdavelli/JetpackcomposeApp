@@ -18,6 +18,9 @@ ksp = "1.9.22-1.0.17"
 hiltVersion = "2.48.1"
 navVersion = "2.7.7"
 composeBom = "2024.04.01"
+mockk = "1.13.10"
+turbine = "1.1.0"
+kotest = "5.9.0"
 
 [libraries]
 androidx-core-ktx = { group = "androidx.core", name = "core-ktx", version.ref = "coreKtx" }
@@ -47,6 +50,11 @@ coroutines-android = { module = "org.jetbrains.kotlinx:kotlinx-coroutines-androi
 androidx-navigation-compose = { module = "androidx.navigation:navigation-compose", version.ref = "navVersion" }
 hiltNavigationCompose = { module = "androidx.hilt:hilt-navigation-compose", version = "1.0.0" }
 coil-compose = "io.coil-kt:coil-compose:2.1.0"
+mockk = { module = "io.mockk:mockk", version.ref = "mockk" }
+turbine = { module = "app.cash.turbine:turbine", version.ref = "turbine" }
+coroutines-test = { module = "org.jetbrains.kotlinx:kotlinx-coroutines-test", version.ref = "coroutines" }
+kotest-assertions = { module = "io.kotest:kotest-assertions-core", version.ref = "kotest" }
+
 [plugins]
 android-application = { id = "com.android.application", version.ref = "agp" }
 jetbrains-kotlin-android = { id = "org.jetbrains.kotlin.android", version.ref = "kotlin" }

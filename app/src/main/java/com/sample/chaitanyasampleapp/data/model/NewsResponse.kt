@@ -20,3 +20,5 @@ data class Source(
     val id: String?,
     val name: String
 )
+
+val fakeData = listOf(Article(source = Source(id="name", name = "sample"), author = "disha",title="first", description = "jbjbjhjhvhvjhvhjv", url = "", urlToImage = "", publishedAt = "koti"))

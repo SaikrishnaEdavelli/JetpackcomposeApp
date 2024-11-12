@@ -1,5 +1,6 @@
 package com.sample.chaitanyasampleapp.data.di
 
+import com.sample.chaitanyasampleapp.BuildConfig
 import com.sample.chaitanyasampleapp.data.api.NewsApiService
 import com.sample.chaitanyasampleapp.data.repository.NewsRepository
 import com.sample.chaitanyasampleapp.data.repository.NewsRepositoryImpl
@@ -9,6 +10,7 @@ import dagger.hilt.InstallIn
 import dagger.hilt.components.SingletonComponent
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
+import javax.inject.Named
 import javax.inject.Singleton
 
 @Module
